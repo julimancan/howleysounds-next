@@ -21,7 +21,7 @@ const Header = () => {
           {/* <link href={`https://fonts.googleapis.com/css2?family=${siteSettings.menuFont}&display=optional`} rel="stylesheet" /> */}
           {/* <link href={`https://fonts.googleapis.com/css2?family=${siteSettings.paragraphFonts}&display=optional`} rel="stylesheet" /> */}
           {/* <link href={`https://fonts.googleapis.com/css2?family=${siteSettings.subtitleFonts}&display=optional`} rel="stylesheet" /> */}
-          {/* <title>{siteSettings.title}</title> */}
+          <title>{siteSettings.title}</title>
           <link rel="shortcut icon" href={siteSettings.favicon?.url} />
         </Head>
     </StyledHeader>

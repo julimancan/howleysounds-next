@@ -1,6 +1,7 @@
 import { useGlobalState } from "../state";
 import styled from "@emotion/styled";
 import TextContent from "./TextContent";
+import { StyledButton } from "./StyledButton";
 
 const HeroBanner = styled.video`
   object-fit: cover;
@@ -57,22 +58,7 @@ const StyledBanner = styled.section`
   }
 `;
 
-const StyledButton = styled.button`
-  background: transparent;
-  border: 1px solid ${({ textColor }) => textColor};
-  color: ${({ textColor }) => textColor};
-  width: fit-content;
-  margin: 1.5rem auto;
-  padding: 0.8rem 2rem;
-  text-transform: uppercase;
-  font-size: 1rem;
-  cursor: pointer;
-  transition: all 0.1s ease-in-out;
-  &:hover {
-    background: ${({ hoverBackground }) => hoverBackground};
-    border: 1px solid ${({ hoverBackground }) => hoverBackground};
-  }
-`;
+
 const UnderBanner = styled.article`
   background: ${({ sectionBgColor }) => sectionBgColor};
   width: 100%;
@@ -114,6 +100,12 @@ const UnderBanner = styled.article`
       padding-top: 2.5rem;
       display: grid;
       align-items: center;
+      @media (min-width: 800px) {
+        white-space:nowrap;
+      }
+      p {
+        line-height: 20px;
+      }
     }
   }
 `;
