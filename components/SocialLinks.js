@@ -23,7 +23,6 @@ const SocialLinkWrapper = styled.div`
   }
 `;
 const SocialLinks = ({ socialLinks, colors }) => {
-  console.log('colors.menuTextColor', colors?.menuTextColor);
   return (
     <SocialLinkWrapper colors={colors} className="social-links">
       <ul>

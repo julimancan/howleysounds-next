@@ -121,7 +121,6 @@ const BurgerMenu = ({ navItems, scrolled, socialItems }) => {
     setElementSelected(link);
     setNavOpen(false);
   };
-  console.log('siteSettings', siteSettings);
   useEffect(() => {
     let elementClicked = document.getElementById(elementSelected);
     elementClicked.scrollIntoView({

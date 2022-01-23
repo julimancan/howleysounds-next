@@ -119,7 +119,6 @@ const StyledForm = styled.form`
 const ContactForm = ({ formContent }) => {
   const [formSent, setFormSent] = useState(false);
   const [siteSettings] = useGlobalState("siteSettings");
-  console.log('siteSettings', siteSettings);
   const handleSubmit = (e) => {
     e.preventDefault();
     const formData = {};
@@ -129,7 +128,6 @@ const ContactForm = ({ formContent }) => {
         ? (formData[field.name] = field.checked)
         : (formData[field.name] = field.value);
     });
-    console.log('formData', formData);
     fetch("api/send-email", {
       method: "post",
       body: JSON.stringify(formData),
