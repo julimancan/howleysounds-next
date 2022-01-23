@@ -107,7 +107,7 @@ export const NavigationItem = styled(AnimatedListItem)`
     text-transform: uppercase;
     font-weight: bold;
     text-decoration: none;
-    color: white;
+    color: #999997;
     font-size: 2rem;
     cursor: pointer;
   }
@@ -134,11 +134,7 @@ const BurgerMenu = ({ navItems, scrolled, socialItems }) => {
     menuBackgroundColor: siteSettings.menuBgColor,
     menuBarColor: siteSettings.menuTextColor,
   };
-  // const colors = {
-  //   menuTextColor: "black",
-  //   menuBackgroundColor: "white",
-  //   menuBarColor: "red"
-  // };
+
 
   return (
     <NavContainer open={navOpen} colors={colors}>

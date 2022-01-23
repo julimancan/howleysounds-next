@@ -10,6 +10,7 @@ const SocialLinkWrapper = styled.div`
     justify-content: space-evenly;
     list-style: none;
     gap: 2rem;
+    /* background: red; */
     li {
       cursor: pointer;
       a {
@@ -22,6 +23,7 @@ const SocialLinkWrapper = styled.div`
   }
 `;
 const SocialLinks = ({ socialLinks, colors }) => {
+  console.log('colors.menuTextColor', colors?.menuTextColor);
   return (
     <SocialLinkWrapper colors={colors} className="social-links">
       <ul>
