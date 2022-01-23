@@ -7,7 +7,7 @@ import SocialLinks from "./SocialLinks";
 const StyledNavBar = styled.ul`
   position: absolute;
   z-index: 10;
-  color: ${({ siteSettings }) => siteSettings.menuTextColor || "white"};
+  color: ${({ siteSettings }) => siteSettings.menuBarColor || "white"};
   top: 2rem;
   /* background: red; */
   padding: 1.8rem 1rem;

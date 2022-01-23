@@ -73,7 +73,7 @@ export default function Home({
       <MyServices myServicesContent={myServicesContent} id="myServices" />
       <ContactSection contactSectionContent={contactSectionContent} id="contact" testimonialsContent={testimonialsContent} />
       <AboutSection  aboutContent={aboutContent} id="about" />
-      {/* <FooterSection footerContent={footerContent} /> */}
+      <FooterSection footerContent={footerContent} />
     </main>
   );
 }

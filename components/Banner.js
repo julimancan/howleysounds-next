@@ -2,7 +2,6 @@ import { useGlobalState } from "../state";
 import styled from "@emotion/styled";
 import TextContent from "./TextContent";
 import { StyledButton } from "./StyledButton";
-import Link from "next/link";
 import NavBar from "./NavBar";
 import BurgerMenu from "./BurgerMenu";
 import { useEffect, useState } from "react";

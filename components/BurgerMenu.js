@@ -41,7 +41,7 @@ const Burger = styled.div`
     width: ${({ open }) => (open ? "40px" : "50px")};
     height: 5px;
     background: ${({ colors, scrolled, open }) =>
-      open ? colors.menuTextColor : !scrolled ? colors.menuTextColor : "#F27A58"};
+      open ? colors.menuTextColor : !scrolled ? colors.menuBarColor : "#F27A58"};
     position: absolute;
     transition: background ${transitionDuration}, top ${transitionDuration},
       bottom ${transitionDuration}, transform ${transitionDuration},
@@ -107,7 +107,7 @@ export const NavigationItem = styled(AnimatedListItem)`
     text-transform: uppercase;
     font-weight: bold;
     text-decoration: none;
-    color: #999997;
+    color: ${({ colors }) => colors?.menuTextColor};;
     font-size: 2rem;
     cursor: pointer;
   }
@@ -121,6 +121,7 @@ const BurgerMenu = ({ navItems, scrolled, socialItems }) => {
     setElementSelected(link);
     setNavOpen(false);
   };
+  console.log('siteSettings', siteSettings);
   useEffect(() => {
     let elementClicked = document.getElementById(elementSelected);
     elementClicked.scrollIntoView({
@@ -132,7 +133,7 @@ const BurgerMenu = ({ navItems, scrolled, socialItems }) => {
   const colors = {
     menuTextColor: siteSettings.menuTextColor || "black",
     menuBackgroundColor: siteSettings.menuBgColor,
-    menuBarColor: siteSettings.menuTextColor,
+    menuBarColor: siteSettings.menuBarColor,
   };
 
 
