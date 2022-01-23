@@ -20,13 +20,14 @@ const StyledFooter = styled.footer`
     /* background: red; */
     align-self: center;
     * {
-      color: ${({footerContent}) => footerContent.textColor}
+      color: ${({ footerContent }) => footerContent.textColor};
     }
     font-size: 1rem;
     font-weight: 800;
   }
-  @media (min-width: 800px) {
+  @media (min-width: 1000px) {
     .footer-nav {
+      align-items: center;
       /* background: red; */
       margin: 0 auto;
       padding: 0 2rem;
@@ -42,7 +43,11 @@ const StyledFooter = styled.footer`
     position: absolute;
     top: 1rem;
     right: 3rem;
-    color: ${({footerContent}) => footerContent.textColor}
+    color: ${({ footerContent }) => footerContent.textColor};
+    @media (min-width: 1000px) {
+      position: relative;
+      top: 0rem;
+    }
   }
 `;
 
@@ -107,7 +112,13 @@ const FooterSection = ({ footerContent }) => {
         {navItems.map((item, index) => (
           <li key={`nav-item${index}`} index={index}>
             {item.linkTo?.includes("https") ? (
-              <a href={item.linkTo} download aria-label={`link to ${item.name}`} target="_blank" rel="noreferrer">
+              <a
+                href={item.linkTo}
+                download
+                aria-label={`link to ${item.name}`}
+                target="_blank"
+                rel="noreferrer"
+              >
                 {item.name}
               </a>
             ) : (
@@ -115,8 +126,8 @@ const FooterSection = ({ footerContent }) => {
             )}
           </li>
         ))}
+        <SocialLinks socialLinks={socialItems} />
       </ul>
-      <SocialLinks socialLinks={socialItems} />
     </StyledFooter>
   );
 };
