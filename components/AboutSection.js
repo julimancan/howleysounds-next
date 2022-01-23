@@ -17,6 +17,7 @@ const StyledAboutSection = styled.section`
     p {
       /* background: red; */
       margin: 1rem 0;
+      font-size: .9rem
     }
   }
 `;

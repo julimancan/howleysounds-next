@@ -27,7 +27,7 @@ export default async (req, res) => {
   `;
 
   const data = {
-    to: "kevinhowleydev@gmail.com",
+    to: body.sentFrom,
     from: "kevinHowleyWebsite@howleysounds.com",
     subject: "New Message from howleysounds Contact Form",
     text: message,

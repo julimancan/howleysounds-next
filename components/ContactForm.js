@@ -1,5 +1,6 @@
 import styled from "@emotion/styled";
 import { useState } from "react";
+import { useGlobalState } from "../state";
 
 const StyledForm = styled.form`
   display: grid;
@@ -117,6 +118,8 @@ const StyledForm = styled.form`
 
 const ContactForm = ({ formContent }) => {
   const [formSent, setFormSent] = useState(false);
+  const [siteSettings] = useGlobalState("siteSettings");
+  console.log('siteSettings', siteSettings);
   const handleSubmit = (e) => {
     e.preventDefault();
     const formData = {};
@@ -126,6 +129,7 @@ const ContactForm = ({ formContent }) => {
         ? (formData[field.name] = field.checked)
         : (formData[field.name] = field.value);
     });
+    console.log('formData', formData);
     fetch("api/send-email", {
       method: "post",
       body: JSON.stringify(formData),
@@ -140,6 +144,7 @@ const ContactForm = ({ formContent }) => {
         <p>Thank you for reaching out I will reply as soon as I can</p>
       ) : (
         <>
+          <input id="sentFrom" type="text" name="sentFrom" value={siteSettings?.emailFrom} hidden readOnly/>
           <label htmlFor="artistName">Artist Name</label>
           <input id="artistName" type="text" name="artistName" />
           <label htmlFor="yourName">Your Name</label>
