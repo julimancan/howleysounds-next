@@ -20,6 +20,7 @@ const StyledNavBar = styled.ul`
   }
   li {
     cursor: pointer;
+    word-break: unset;
     &:hover {
       color: ${({ siteSettings }) => siteSettings.menuHoverColor || "white"};
     }

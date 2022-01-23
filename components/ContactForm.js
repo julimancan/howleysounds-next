@@ -4,15 +4,14 @@ import { useGlobalState } from "../state";
 
 const StyledForm = styled.form`
   display: grid;
-  width: 100%;
+  width: 100vw;
   padding: 0 2rem;
-  @media (min-width: 800px) {
-    padding: 0 2rem;
+  @media (min-width: 1225px) {
+    max-width: 600px;
   }
   p {
     font-size: .9rem;
   }
-  margin: 0 auto;
   label {
     font-weight: 100;
     margin-top: 1rem;

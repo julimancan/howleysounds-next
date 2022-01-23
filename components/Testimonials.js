@@ -24,7 +24,7 @@ const StyledTestimonials = styled.article`
     height: 100%;
     @media (min-width: 800px) {
       height: 100%;
-      min-width: 600px;
+      /* min-width: 600px; */
     }
     position: absolute;
     top: 0;

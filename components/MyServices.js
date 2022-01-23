@@ -24,6 +24,7 @@ const StyledMyServices = styled.section`
   article {
     max-width: 1350px;
     margin: 0 2rem;
+    width: 90vw;
     @media (min-width: 800px) {
       margin: 0 auto;
     }

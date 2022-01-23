@@ -9,7 +9,8 @@ const StyledSection = styled.li`
   color: ${({ section }) => section.textColor};
   .content {
     margin: 0 auto;
-    max-width: 450px;
+    /* max-width: 450px; */
+    padding: 0 1rem;
     @media (min-width: 940px) {
       display: flex;
       max-width: 1350px;

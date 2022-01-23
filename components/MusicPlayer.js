@@ -19,7 +19,7 @@ const StyledMusicPlayer = styled.section`
       display: flex;
       flex-direction: column;
       align-items: center;
-      @media (min-width: 700px) {
+      @media (min-width: 800px) {
         flex-direction: row;
         gap: 4rem;
         /* background: blue; */

@@ -48,16 +48,12 @@ const StyledBanner = styled.section`
     h1 {
       color: ${({ titleColor }) => titleColor};
       text-align: center;
-      font-size: 3rem;
       text-transform: uppercase;
-      line-height: 3rem;
-      @media (min-width: 600px) {
-        font-size: 3.5rem;
-
-      }
+      font-size: 13vw;
+      line-height: 15vw;
       @media (min-width: 800px) {
-        font-size: 4rem;
-        line-height: 3.5rem;
+        font-size: 5.5rem;
+        line-height: 4.5rem;
         
       }
     }

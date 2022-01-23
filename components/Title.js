@@ -33,7 +33,6 @@ const StyledTitle = styled.div`
     font-size: 2rem;
     @media (min-width: 800px) {
       font-size: 2.7rem;
-      
     }
     text-transform: uppercase;
   }
@@ -44,11 +43,11 @@ const StyledTitle = styled.div`
 
 const Title = ({ title, subtitle }) => {
   return (
-    <StyledTitle>
+    <StyledTitle className="section-title">
       <div className="line red"></div>
       <div className="line blue"></div>
       <div className="line yellow"></div>
-      <h2>{title}</h2>
+      <h2 >{title}</h2>
       <p>{subtitle}</p>
     </StyledTitle>
   );
