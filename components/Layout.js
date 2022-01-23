@@ -36,6 +36,7 @@ const LayoutWrapper = styled.div`
     font-family: "Gotham-Book"
 
   }
+  
   `;
 
 const Layout = ({ children }) => {

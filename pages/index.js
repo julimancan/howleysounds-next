@@ -1,16 +1,23 @@
 // import Head from 'next/head'
 // import Image from 'next/image'
 import { useEffect } from "react";
+import AboutSection from "../components/AboutSection";
 import Banner from "../components/Banner";
+import ContactSection from "../components/ContactSection";
+import FooterSection from "../components/FooterSection";
 import HoverBoxes from "../components/HoverBoxes";
 import MusicPlayer from "../components/MusicPlayer";
 import MyServices from "../components/MyServices";
 import {
+  getAboutContent,
+  getContactSectionContent,
+  getFooterContent,
   getHeroBanner,
   getHoverBoxesContent,
   getMusicPlayerContent,
   getMyServicesContent,
   getSiteSettings,
+  getTestimonialsContent,
 } from "../lib/api";
 import { useGlobalState } from "../state";
 
@@ -19,7 +26,11 @@ export default function Home({
   banner,
   musicPlayer,
   hoverBoxesContent,
-  myServicesContent
+  myServicesContent,
+  contactSectionContent,
+  testimonialsContent,
+  aboutContent,
+  footerContent
 }) {
 
   const setSiteSettings = useGlobalState("siteSettings")[1];
@@ -28,12 +39,41 @@ export default function Home({
     setSiteSettings(siteConfig[0]);
   }, []);
 
+  const navItems = [
+    {
+      name: "HOME",
+      linkTo: "banner"
+    },
+    {
+      name: "MY WORK",
+      linkTo: "musicPlayer"
+    },
+    {
+      name: "MY SERVICES",
+      linkTo: "myServices"
+    },
+    {
+      name: "ABOUT",
+      linkTo: "about"
+    },
+    {
+      name: "CONTACT",
+      linkTo: "contact"
+    },
+    {
+      name: "FREE eBOOk",
+      linkTo: "Contact"
+    },
+  ]
   return (
     <main>
-      <Banner banner={banner} />
-      <MusicPlayer musicPlayer={musicPlayer} />
+      <Banner banner={banner} id="banner" />
+      <MusicPlayer musicPlayer={musicPlayer} id="musicPlayer" />
       <HoverBoxes hoverBoxesContent={hoverBoxesContent} />
-      <MyServices myServicesContent={myServicesContent} />
+      <MyServices myServicesContent={myServicesContent} id="myServices" />
+      <ContactSection contactSectionContent={contactSectionContent} id="contact" testimonialsContent={testimonialsContent} />
+      <AboutSection  aboutContent={aboutContent} id="about" />
+      {/* <FooterSection footerContent={footerContent} /> */}
     </main>
   );
 }
@@ -44,6 +84,10 @@ export async function getServerSideProps(context) {
   const musicPlayer = await getMusicPlayerContent();
   const hoverBoxesContent = await getHoverBoxesContent();
   const myServicesContent = await getMyServicesContent();
+  const contactSectionContent = await getContactSectionContent();
+  const testimonialsContent = await getTestimonialsContent();
+  const aboutContent = await getAboutContent();
+  const footerContent = await getFooterContent();
 
   return {
     props: {
@@ -51,7 +95,11 @@ export async function getServerSideProps(context) {
       banner,
       musicPlayer,
       hoverBoxesContent,
-      myServicesContent
+      myServicesContent,
+      contactSectionContent,
+      testimonialsContent,
+      aboutContent,
+      footerContent
     },
   };
 }

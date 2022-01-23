@@ -2,7 +2,11 @@ import { useGlobalState } from "../state";
 import styled from "@emotion/styled";
 import TextContent from "./TextContent";
 import { StyledButton } from "./StyledButton";
-
+import Link from "next/link";
+import NavBar from "./NavBar";
+import BurgerMenu from "./BurgerMenu";
+import { useEffect, useState } from "react";
+import { FaInstagram, FaFacebookSquare} from "react-icons/fa"
 const HeroBanner = styled.video`
   object-fit: cover;
   width: 100%;
@@ -14,13 +18,14 @@ const HeroBanner = styled.video`
 `;
 
 const StyledBanner = styled.section`
+
   display: flex;
   align-items: center;
   justify-content: center;
   height: 80vh;
   overflow: hidden;
   /* width: 100vw; */
-  background: red;
+  /* background: red; */
   
   * {
     z-index: 10;
@@ -44,9 +49,18 @@ const StyledBanner = styled.section`
     h1 {
       color: ${({ titleColor }) => titleColor};
       text-align: center;
-      font-size: clamp(2rem, 3rem, 5.93rem);
+      font-size: 3rem;
       text-transform: uppercase;
-      line-height: clamp(1.8rem, 2.8rem, 5.57rem);
+      line-height: 3rem;
+      @media (min-width: 600px) {
+        font-size: 3.5rem;
+
+      }
+      @media (min-width: 800px) {
+        font-size: 4rem;
+        line-height: 3.5rem;
+        
+      }
     }
     p {
       color: ${({ subtitleColor }) => subtitleColor};
@@ -55,6 +69,8 @@ const StyledBanner = styled.section`
       transform: clamp(translateY(0), translateY(-5px));
       margin: 0 auto;
     }
+    /* background: red; */
+    /* height: 1000px; */
   }
 `;
 
@@ -65,23 +81,23 @@ const UnderBanner = styled.article`
   padding: 3rem .5rem;
   display: grid;
   justify-content: center;
-  @media (min-width: 800px) {
+  @media (min-width: 900px) {
     padding: 3rem 0;
   }
   .under-banner-content {
     display: grid;
     margin: 0 auto;
     width: 100%;
-    @media (min-width: 800px) {
+    @media (min-width: 900px) {
       display: flex;
     }
     .under-banner-left {
       width: 100%;
       text-align: left;
       margin-right: 2rem;
-      @media (min-width: 800px) {
+      @media (min-width: 900px) {
         text-align: right;
-        width: 35%;
+        /* width: 35%; */
         
       }
       h2 {
@@ -110,11 +126,68 @@ const UnderBanner = styled.article`
   }
 `;
 
-const Banner = ({ banner }) => {
+
+
+const Banner = ({ banner, id }) => {
   const [siteSettings] = useGlobalState("siteSettings");
   const { underBanner } = banner;
+  const [scrolled, setScrolled] = useState(false);
+  const handleScroll = () => {
+    const pagePercentage = window.innerHeight * .8;
+    if (window.pageYOffset >= pagePercentage) {
+      setScrolled(true)
+    } else {
+      setScrolled(false)
+    }
+  }
+  useEffect(() => {
+    window.addEventListener("scroll", handleScroll)
+  }, []);
+  
+  const socialItems = [
+    {
+      name: "instagram",
+      link: siteSettings.instagramAccountLink,
+      icon: <FaInstagram/>,
+      index: 6
+    },
+    {
+      name: "facebook",
+      link: siteSettings.facebookAccountLink,
+      icon: <FaFacebookSquare/>,
+      index: 7
+    }
+  ]
+  console.log(siteSettings)
+  const navItems = [
+    {
+      name: "HOME",
+      linkTo: "banner"
+    },
+    {
+      name: "MY WORK",
+      linkTo: "musicPlayer"
+    },
+    {
+      name: "MY SERVICES",
+      linkTo: "myServices"
+    },
+    {
+      name: "ABOUT",
+      linkTo: "about"
+    },
+    {
+      name: "CONTACT",
+      linkTo: "contact"
+    },
+    {
+      name: "FREE eBOOK",
+      linkTo: siteSettings.pdf?.pdfFile
+    },
+  ]
+
   return (
-    <section>
+    <section id={id} >
       <StyledBanner
         titleColor={banner.titleColor}
         subtitleColor={banner.subtitleColor}
@@ -124,6 +197,8 @@ const Banner = ({ banner }) => {
           <source src={banner.bgVideo.main} type="video/webm" />
           <source src={banner.bgVideo.fallback} type="video/mp4" />
         </HeroBanner>
+        <NavBar siteSettings={siteSettings} navItems={navItems} socialItems={socialItems} />
+        <BurgerMenu navItems={navItems} scrolled={scrolled} socialItems={socialItems} />
         <div className="title">
           <img src={banner.logo.url} />
           <h1>{banner.title}</h1>
