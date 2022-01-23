@@ -1,4 +1,3 @@
-import { sendEmail } from "../../lib/sendEmail";
 
 const mail = require("@sendgrid/mail");
 

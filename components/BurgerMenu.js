@@ -140,7 +140,6 @@ const BurgerMenu = ({ navItems, scrolled, socialItems }) => {
   //   menuBarColor: "red"
   // };
 
-  console.log({ navItems });
   return (
     <NavContainer open={navOpen} colors={colors}>
       <BurgerContainer onClick={() => setNavOpen(!navOpen)} open={navOpen}>

@@ -159,7 +159,6 @@ const Banner = ({ banner, id }) => {
       index: 7
     }
   ]
-  console.log(siteSettings)
   const navItems = [
     {
       name: "HOME",
