@@ -4,7 +4,7 @@ import { useState } from "react";
 const StyledForm = styled.form`
   display: grid;
   width: 100%;
-  padding: 0 .5rem;
+  padding: 0 2rem;
   @media (min-width: 800px) {
     padding: 0 2rem;
     

@@ -30,7 +30,7 @@ const Burger = styled.div`
       ? colors.menuBackgroundColor
       : !scrolled
       ? colors.menuBarColor
-      : "black"};
+      : "#F27A58"};
   border-radius: 5px;
   align-self: center;
   transition: width ${transitionDuration}, background ${transitionDuration};
@@ -41,7 +41,7 @@ const Burger = styled.div`
     width: ${({ open }) => (open ? "40px" : "50px")};
     height: 5px;
     background: ${({ colors, scrolled, open }) =>
-      open ? colors.menuTextColor : !scrolled ? colors.menuTextColor : "black"};
+      open ? colors.menuTextColor : !scrolled ? colors.menuTextColor : "#F27A58"};
     position: absolute;
     transition: background ${transitionDuration}, top ${transitionDuration},
       bottom ${transitionDuration}, transform ${transitionDuration},

@@ -88,6 +88,7 @@ const UnderBanner = styled.article`
     display: grid;
     margin: 0 auto;
     width: 100%;
+    padding: 1.5rem;
     @media (min-width: 900px) {
       display: flex;
     }
@@ -185,7 +186,18 @@ const Banner = ({ banner, id }) => {
       linkTo: siteSettings.pdf?.pdfFile
     },
   ]
-
+  const [elementSelected, setElementSelected] = useState("banner");
+  const handleClick = (link) => {
+    setElementSelected(link);
+  };
+  useEffect(() => {
+    let elementClicked = document.getElementById(elementSelected);
+    elementClicked.scrollIntoView({
+      block: "start",
+      behavior: "smooth",
+      inline: "start",
+    });
+  }, [elementSelected]);
   return (
     <section id={id} >
       <StyledBanner
@@ -206,6 +218,7 @@ const Banner = ({ banner, id }) => {
           <StyledButton
             textColor={banner.subtitleColor}
             hoverBackground={banner.ctaHoverColor}
+            onClick={() => handleClick("musicPlayer")}
           >
             {banner.bannerCta}
           </StyledButton>
@@ -229,6 +242,7 @@ const Banner = ({ banner, id }) => {
             <StyledButton
               textColor={underBanner.descriptionColor}
               hoverBackground={banner.ctaHoverColor}
+              onClick={() => handleClick("contact")}
             >
               {underBanner.ctaText}
             </StyledButton>

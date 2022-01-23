@@ -1,4 +1,5 @@
 import styled from "@emotion/styled";
+import { useEffect, useState } from "react";
 import ServicesSection from "./ServicesSection";
 import { StyledButton } from "./StyledButton";
 import TextContent from "./TextContent";
@@ -22,15 +23,29 @@ const StyledMyServices = styled.section`
   }
   article {
     max-width: 1350px;
-
     margin: 0 2rem;
     @media (min-width: 800px) {
       margin: 0 auto;
     }
     text-align: center;
   }
+  P {
+    font-size: 0.9rem;
+  }
 `;
 const MyServices = ({ myServicesContent, id }) => {
+  const [elementSelected, setElementSelected] = useState("banner");
+  const handleClick = (link) => {
+    setElementSelected(link);
+  };
+  useEffect(() => {
+    let elementClicked = document.getElementById(elementSelected);
+    elementClicked.scrollIntoView({
+      block: "start",
+      behavior: "smooth",
+      inline: "start",
+    });
+  }, [elementSelected]);
   return (
     <StyledMyServices id={id}>
       <div className="services-title">
@@ -47,9 +62,10 @@ const MyServices = ({ myServicesContent, id }) => {
       <div className="bottom-line" />
       <article>
         <TextContent content={myServicesContent.summary} />
-        <StyledButton textColor="black" hoverBackground="#00B2B5">
-          {myServicesContent.ctaText}
-        </StyledButton>
+
+          <StyledButton textColor="black" hoverBackground="#00B2B5" onClick={() => handleClick("contact")}>
+            {myServicesContent.ctaText}
+          </StyledButton>
       </article>
     </StyledMyServices>
   );

@@ -28,7 +28,7 @@ const StyledMusicPlayer = styled.section`
         object-fit: cover;
         aspect-ratio: 1;
         width: 100%;
-        max-width: 170px;
+        /* max-width: 170px; */
         margin: .5rem 0;
         @media (min-width: 800px) {
           width: 50%;

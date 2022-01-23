@@ -10,8 +10,12 @@ const StyledTitle = styled.div`
   div {
     position: absolute;
     width: 3px;
-    height: 32px;
-    top: 10.5px;
+    height: 25px;
+    top: 7px;
+    @media (min-width: 800px) {
+      height: 32px;
+      top: 10.5px;
+    }
   }
   .red {
     background: #F26E73;
@@ -26,8 +30,15 @@ const StyledTitle = styled.div`
     left: -${initialLinePositions}px;
   }
   h2 {
-    font-size: 2.7rem;
+    font-size: 2rem;
+    @media (min-width: 800px) {
+      font-size: 2.7rem;
+      
+    }
     text-transform: uppercase;
+  }
+  p {
+    font-size:.9rem;
   }
 `;
 

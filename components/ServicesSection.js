@@ -2,7 +2,7 @@ import styled from "@emotion/styled";
 
 const StyledSection = styled.li`
   background: ${({ section }) => section.bgColor};
-  padding: 2rem .5rem;
+  padding: 2rem 2rem;
   @media (min-width: 800px) {
     padding: 2rem 1rem;
   }
@@ -37,6 +37,7 @@ const StyledSection = styled.li`
       }
       p {
         margin: 0 0 1rem;
+        font-size: .9rem;
       }
     }
   }
