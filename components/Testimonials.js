@@ -33,7 +33,7 @@ const StyledTestimonials = styled.article`
     .transparency {
       width: 100%;
       height: 100%;
-      background: rgba(32, 95, 105, 0.5);
+      background: rgba(32, 95, 105, 0.8);
     }
   }
   .prev,
