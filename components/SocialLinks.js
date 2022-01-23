@@ -32,7 +32,7 @@ const SocialLinks = ({ socialLinks, colors }) => {
             colors={colors}
             index={item.index}
           >
-            <a href={item.link} target="_blank">
+            <a href={item.link} target="_blank" rel="noreferrer">
               {item.icon}
             </a>
           </NavigationItem>

@@ -5,7 +5,7 @@ const FooterSection = ({ footerContent }) => {
 
   return (
     <div>
-      <a href={siteSettings.pdf?.pdfFile} download target="_blank">
+      <a href={siteSettings.pdf?.pdfFile} download target="_blank" rel="noreferrer">
         <h4>{siteSettings.pdf?.pdfText}</h4>
       </a>
     </div>

@@ -155,7 +155,7 @@ const BurgerMenu = ({ navItems, scrolled, socialItems }) => {
             index={index}
           >
             {item.linkTo?.includes("https") ? (
-              <a href={item.linkTo} download target="_blank">
+              <a href={item.linkTo} download target="_blank" rel="noreferrer">
                 <h3>{item.name}</h3>
               </a>
             ) : (

@@ -57,7 +57,7 @@ const NavBar = ({ siteSettings, navItems, socialItems }) => {
       {navItems.map((item, index) => (
         <AnimatedListItem key={`nav-item${index}`} index={index}>
           {item.linkTo?.includes("https") ? (
-            <a href={item.linkTo} download target="_blank">
+            <a href={item.linkTo} download target="_blank" rel="noreferrer">
               {item.name}
             </a>
           ) : (
