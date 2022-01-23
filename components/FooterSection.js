@@ -107,7 +107,7 @@ const FooterSection = ({ footerContent }) => {
         {navItems.map((item, index) => (
           <li key={`nav-item${index}`} index={index}>
             {item.linkTo?.includes("https") ? (
-              <a href={item.linkTo} download target="_blank" rel="noreferrer">
+              <a href={item.linkTo} download aria-label={`link to ${item.name}`} target="_blank" rel="noreferrer">
                 {item.name}
               </a>
             ) : (

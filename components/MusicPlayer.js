@@ -144,6 +144,7 @@ const MusicPlayer = ({ musicPlayer, id }) => {
           <img
             src={musicPlayer.musicPlayerImage.url}
             className="player-image"
+            alt={musicPlayer.musicPlayerImage.alt || "Image of Kevin Howley at work"}
           />
           {currentTrack && (
             <div className="player-info">

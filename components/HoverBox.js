@@ -154,28 +154,28 @@ const HoverBox = ({ hoverBox }) => {
         <div className="song-links">
           {hoverBox.songLinks?.apple && (
             <Link target="_blank" href={hoverBox.songLinks.apple} passHref>
-              <a target="_blank">
+              <a target="_blank" aria-label={`apple link for ${hoverBox.artistName}`}>
                 <BsApple />
               </a>
             </Link>
           )}
           {hoverBox.songLinks?.spotify && (
             <Link target="_blank" href={hoverBox.songLinks.spotify} passHref>
-              <a target="_blank">
+              <a target="_blank" aria-label={`spotify link for ${hoverBox.artistName}`}>
                 <BsSpotify />
               </a>
             </Link>
           )}
           {hoverBox.songLinks?.tidal && (
             <Link target="_blank" href={hoverBox.songLinks.tidal} passHref>
-              <a target="_blank">
+              <a target="_blank" aria-label={`tidal link for ${hoverBox.artistName}`}>
                 <SiTidal />
               </a>
             </Link>
           )}
           {hoverBox.songLinks?.youtube && (
             <Link href={hoverBox.songLinks.youtube} passHref>
-              <a target="_blank">
+              <a target="_blank" aria-label={`youtube link for ${hoverBox.artistName}`}>
                 <BsYoutube />
               </a>
             </Link>

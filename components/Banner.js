@@ -206,11 +206,12 @@ const Banner = ({ banner, id }) => {
         <HeroBanner autoPlay loop muted alt={banner.bgVideo.alt}>
           <source src={banner.bgVideo.main} type="video/webm" />
           <source src={banner.bgVideo.fallback} type="video/mp4" />
+          {banner.bgVideo.alt || "Viedo Background for Music Producer Kevin Howley"}
         </HeroBanner>
         <NavBar siteSettings={siteSettings} navItems={navItems} socialItems={socialItems} />
         <BurgerMenu navItems={navItems} scrolled={scrolled} socialItems={socialItems} />
         <div className="title">
-          <img src={banner.logo.url} />
+          <img src={banner.logo.url} alt="logo" />
           <h1>{banner.title}</h1>
           <p>{banner.subtitle}</p>
           <StyledButton

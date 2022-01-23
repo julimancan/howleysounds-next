@@ -28,7 +28,7 @@ const AboutSection = ({ id, aboutContent }) => {
       <Title title={aboutContent.title} subtitle={aboutContent.subtitle} />
       <div className="about-content">
         <div className="image">
-          <img src={aboutContent.image.url} alt={aboutContent.image.alt} />
+          <img src={aboutContent.image.url} alt={aboutContent.image.alt || "Photo collage of Kevin Howley"} />
         </div>
         <TextContent content={aboutContent.content} />
       </div>

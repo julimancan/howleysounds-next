@@ -5,5 +5,9 @@ module.exports = {
     SANITY_PROJECT_ID: process.env.SANITY_PROJECT_ID,
     SENDGRID_API_KEY: process.env.SENDGRID_API_KEY
   },
-  reactStrictMode: true
+  reactStrictMode: true,
+  i18n: {
+    locales: ["en"],
+    defaultLocale: "en"
+  }
 }
