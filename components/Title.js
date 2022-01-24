@@ -17,11 +17,11 @@ const StyledTitle = styled.div`
     position: absolute;
     width: 3px;
     height: 25px;
-    top: .5rem;
+    top: 8px;
     /* transform: translateY(-20%); */
     @media (min-width: 800px) {
       height: 32px;
-      top: 0.65rem;
+      top: 9px;
     }
   }
   .red {
