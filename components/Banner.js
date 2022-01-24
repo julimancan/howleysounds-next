@@ -100,11 +100,14 @@ const UnderBanner = styled.article`
         color: ${({ nameColor }) => nameColor};
         font-size: 1.8rem;
         /* margin-bottom: .5rem; */
+
       }
       h3 {
         color: ${({ jobsColor }) => jobsColor};
         font-size: 1.5rem;
         line-height: 1.4rem;
+        letter-spacing: .5px;
+
       }
     }
     .under-banner-right {

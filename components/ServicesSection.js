@@ -22,6 +22,8 @@ const StyledSection = styled.li`
       h3 {
         /* background: red; */
         font-size: 1.8rem;
+        letter-spacing: 1px;
+
         @media (min-width: 1280px) {
           font-size:  2.5rem
         }

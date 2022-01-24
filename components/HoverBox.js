@@ -31,12 +31,13 @@ const StyledHoverBox = styled.li`
     background: white;
     height: 100%;
     max-height: 100%;
-    padding: 0.5rem;
+    padding: 1rem;
     opacity: 0;
     transition: all 0.3s linear;
     font-size: 0.6em;
     h3 {
       font-size: 0.9rem;
+      letter-spacing: 1px;
     }
     span {
     }
@@ -53,7 +54,7 @@ const StyledHoverBox = styled.li`
     strong {
       width: 100%;
       display: block;
-      margin-top: 0.5rem;
+      margin: 1rem 0 0.5rem;
       @media (min-width: 800px) {
         margin-top: 2rem;
       }
@@ -104,9 +105,9 @@ const StyledHoverBox = styled.li`
   }
 `;
 const RoleItem = styled.li`
-  grid-row: ${({ roleLength }) => roleLength >= 19 && "1/3"};
-  `;
-  // background: ${({ roleLength }) => roleLength >= 19 && "red"};
+  grid-row: ${({ roleLength }) => roleLength >= 22 && "1/3"};
+`;
+// background: ${({ roleLength }) => roleLength >= 19 && "red"};
 
 const HoverBox = ({ hoverBox }) => {
   const [hoverState, setHoverState] = useState(false);
@@ -148,34 +149,51 @@ const HoverBox = ({ hoverBox }) => {
         <strong>Production Roles:</strong>
         <ul>
           {hoverBox.productionRoles.map((role, index) => (
-            <RoleItem roleLength={role.length} key={`production-role-${index}`}>{role}</RoleItem>
+            <RoleItem
+              roleLength={hoverBox.productionRoles.length >= 6 && role.length}
+              key={`production-role-${index}`}
+            >
+              {role}
+            </RoleItem>
           ))}
         </ul>
         <div className="song-links">
           {hoverBox.songLinks?.apple && (
             <Link target="_blank" href={hoverBox.songLinks.apple} passHref>
-              <a target="_blank" aria-label={`apple link for ${hoverBox.artistName}`}>
+              <a
+                target="_blank"
+                aria-label={`apple link for ${hoverBox.artistName}`}
+              >
                 <BsApple />
               </a>
             </Link>
           )}
           {hoverBox.songLinks?.spotify && (
             <Link target="_blank" href={hoverBox.songLinks.spotify} passHref>
-              <a target="_blank" aria-label={`spotify link for ${hoverBox.artistName}`}>
+              <a
+                target="_blank"
+                aria-label={`spotify link for ${hoverBox.artistName}`}
+              >
                 <BsSpotify />
               </a>
             </Link>
           )}
           {hoverBox.songLinks?.tidal && (
             <Link target="_blank" href={hoverBox.songLinks.tidal} passHref>
-              <a target="_blank" aria-label={`tidal link for ${hoverBox.artistName}`}>
+              <a
+                target="_blank"
+                aria-label={`tidal link for ${hoverBox.artistName}`}
+              >
                 <SiTidal />
               </a>
             </Link>
           )}
           {hoverBox.songLinks?.youtube && (
             <Link href={hoverBox.songLinks.youtube} passHref>
-              <a target="_blank" aria-label={`youtube link for ${hoverBox.artistName}`}>
+              <a
+                target="_blank"
+                aria-label={`youtube link for ${hoverBox.artistName}`}
+              >
                 <BsYoutube />
               </a>
             </Link>

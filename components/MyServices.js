@@ -19,8 +19,9 @@ const StyledMyServices = styled.section`
     }
     height: 1px;
     background: black;
-    margin: 1rem auto;
+    margin: 2rem auto;
   }
+  
   article {
     max-width: 1350px;
     margin: 0 2rem;
@@ -32,6 +33,10 @@ const StyledMyServices = styled.section`
   }
   P {
     font-size: 0.9rem;
+    text-align: left
+  }
+  button {
+    margin-top: 2rem;
   }
 `;
 const MyServices = ({ myServicesContent, id }) => {

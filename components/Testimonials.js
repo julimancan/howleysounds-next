@@ -69,18 +69,27 @@ const StyledTestimonials = styled.article`
     p {
       text-align: center;
     }
+    h3, h4, h5 {
+      letter-spacing: 1px;
+    }
     h3 {
       font-size: 2rem;
+      font-family: "Gotham-Book";
+      font-weight: 100
     }
     h4 {
       font-size: 1.8rem;
     }
     h5 {
+      margin-top: -.5rem;
+      font-family: "Gotham-Book";
+      font-weight: 100;
       font-size: 1.2rem;
     }
     p {
       font-size: 12px;
       line-height: 1.5rem;
+      text-align: left;
       @media (min-width: 600px) {
         font-size: 10px;
       }

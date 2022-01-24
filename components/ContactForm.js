@@ -113,6 +113,13 @@ const StyledForm = styled.form`
   h4 {
     margin-top: 2rem;
   }
+  #message {
+    border: 1px solid black;
+    &:focus {
+      outline: none;
+      border: 1px solid #aad9e2;
+    }
+  }
 `;
 
 const ContactForm = ({ formContent }) => {
