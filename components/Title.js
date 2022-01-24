@@ -11,10 +11,10 @@ const StyledTitle = styled.div`
     position: absolute;
     width: 3px;
     height: 25px;
-    top: 7px;
+    top: 25%;
+    transform: translateY(-20%);
     @media (min-width: 800px) {
       height: 32px;
-      top: 10.5px;
     }
   }
   .red {
