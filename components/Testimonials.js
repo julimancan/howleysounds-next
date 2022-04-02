@@ -1,5 +1,5 @@
 import styled from "@emotion/styled";
-import { useRef, useState } from "react";
+import { useRef, useState, useEffect } from "react";
 import { MdNavigateNext, MdNavigateBefore } from "react-icons/md";
 const StyledTestimonials = styled.article`
   position: relative;
@@ -108,35 +108,30 @@ const Testimonials = ({ content }) => {
   const testimonialRef = useRef();
 
   const arrayLength = content.testimonials.length - 1;
-
   const handleNext = () => {
-    testimonialRef.current.style.opacity = 0;
-    // testimonialRef.current.style.transition = "0.25s all ease-in-out";
     if (currentIndex >= arrayLength) {
       setCurrentIndex(0);
     } else {
       setCurrentIndex(currentIndex + 1);
     }
-    setTimeout(() => {
-      testimonialRef.current.style.opacity = 1;
-      setCurrentTestimonial(content.testimonials[currentIndex]);
-    }, 400);
+
   };
 
+  
   const handlePrev = () => {
-    testimonialRef.current.style.opacity = 0;
-
     if (currentIndex === 0) {
       setCurrentIndex(arrayLength);
     } else {
       setCurrentIndex(currentIndex - 1);
     }
-
-    setTimeout(() => {
-      testimonialRef.current.style.opacity = 1;
-      setCurrentTestimonial(content.testimonials[currentIndex]);
-    }, 400);
   };
+  useEffect(() => {
+    testimonialRef.current.style.opacity = 0;
+    setTimeout(() => {
+      setCurrentTestimonial(content.testimonials[currentIndex]);
+      testimonialRef.current.style.opacity = 1;
+    }, 400);    
+  }, [currentIndex]);
 
   return (
     <StyledTestimonials imageUrl={content.sectionBgImage.url}>

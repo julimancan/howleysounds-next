@@ -148,7 +148,7 @@ const ContactForm = ({ formContent }) => {
         <p>Thank you for reaching out I will reply as soon as I can</p>
       ) : (
         <>
-          <input id="sentFrom" type="text" name="sentFrom" value={siteSettings?.emailFrom} hidden readOnly/>
+          <input id="sentFrom" type="text" name="sentFrom" value={siteSettings?.emailFrom || ""} hidden readOnly/>
           <label htmlFor="artistName">Artist Name</label>
           <input id="artistName" type="text" name="artistName" />
           <label htmlFor="yourName">Your Name</label>
